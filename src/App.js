@@ -1,19 +1,31 @@
 import React from "react";
-import questionsData from './questions'
+import CategoriesData from './categories.json'
+import tempQuestionsData from './questions'
+import FirstPage from "./FirstPage";
+import CategoryPage from "./CategoryPage";
+import SelectionPage from "./SelectionPage";
+import QuestionPagePreview from "./QuestionPagePreview";
 import Question from "./Question";
 import {nanoid} from "nanoid"
 
 
 function App() {
-    const [showHomePage, setShowHomePage] = React.useState(true)
+    const [categoriesData, setCategoriesData] = React.useState(JSON.parse(JSON.stringify(CategoriesData.items)))
+    const [questionsData, setQuestionsData] = React.useState(tempQuestionsData)
+    const [showFirstPage, setShowFirstPage] = React.useState(true)
+    const [showCategoryPage, setShowCategoryPage] = React.useState(false)
+    const [showSelectionPage, setShowSelectionPage] = React.useState(false)
     const [showQuestionsPage, setShowQuestionsPage] = React.useState(false)
     const [checkAnswersClicked, setCheckAnswersClicked] = React.useState(false)
     const [answerSheet, setAnswerSheet] = React.useState([])
     const [score, setScore] = React.useState(0)
+    const [banner, setBanner] = React.useState("")
 
-    function handleStartClicked() {
-        setShowHomePage(false)
-        setShowQuestionsPage(true)
+    function startOver() {
+        setShowFirstPage(false)
+        setShowCategoryPage(true)
+        setShowSelectionPage(false)
+        setShowQuestionsPage(false)
     }
 
     let playerAnswers = {}
@@ -67,11 +79,14 @@ function App() {
         return idArr[index]
     }
 
+    const [selectedCategory, setSelectedCategory] = React.useState("")
+
     function determineScoreColor(num) {
-        if(num <= 2) return {color: '#ff1b1b'}
-        if(num >= 3 && num <= 5) return {color: '#ff8800'}
-        if(num >= 6 && num <= 8) return {color: '#d9ff00'}
-        if(num === 9 || num === 10) return {color: '#00ff37'}
+        let percentage = (num/questionsData.results.length)*100
+        if(percentage <= 25) return {color: '#ff1b1b'}
+        if(percentage <= 50 && percentage > 25) return {color: '#ff8800'}
+        if(percentage <= 75 && percentage > 50) return {color: '#d9ff00'}
+        if(percentage > 75) return {color: '#00ff37'}
     }
 
     const questionElements = questionsData.results.map((questionData, i) => {
@@ -86,21 +101,39 @@ function App() {
     })
     return(
         <div>
-            <div className="top-right-blob"></div>
-            <div className="bottom-left-blob"></div>
-            {showHomePage && <div className="start-page">
-                <div className="info-container">
-                    <div className="title">Quizzical</div>
-                    <div className="instructions">Some description if needed</div>
-                    <div onClick={handleStartClicked} className="start-quiz-button">Start Quiz</div>
-                </div>
-            </div>}
+            {showFirstPage && <FirstPage 
+                                        setShowCategoryPage={setShowCategoryPage}
+                                        setShowFirstPage={setShowFirstPage}
+                                    />}
+            {showCategoryPage && <CategoryPage 
+                                        setShowCategoryPage={setShowCategoryPage} 
+                                        setShowSelectionPage={setShowSelectionPage}
+                                        setSelectedCategory={setSelectedCategory}
+                                        categoriesData={categoriesData}
+                                        setCategoriesData={setCategoriesData}
+                                    />}
+            {showSelectionPage && <SelectionPage 
+                                        setShowSelectionPage={setShowSelectionPage}
+                                        setShowQuestionsPage={setShowQuestionsPage} 
+                                        selectedCategory={selectedCategory}
+                                        setQuestionsData={setQuestionsData}
+                                        categoriesData={categoriesData}
+                                        setBanner={setBanner}
+                                    />}
             {showQuestionsPage && <div>
-                <div className="questions-page">
-                    {questionElements}
+                <QuestionPagePreview banner={banner}/>
+                <div className="question-section">
+                    <h2 style={{textAlign: "center"}}>Answer the questions below</h2>
+                    <div className="questions-container">
+                        {questionElements}
+                    {checkAnswersClicked && <div className="remarks">You scored <span style={determineScoreColor(score)} className="score">{score}</span>/{questionsData.results.length} correct questions</div>}
+                    {
+                        checkAnswersClicked ? 
+                        <button onClick={startOver}>{'Play again'}</button> :
+                        <button onClick={showAnswers}>{'Submit Quiz'}</button> 
+                        }
+                    </div>
                 </div>
-                {checkAnswersClicked && <div className="remarks">You scored <span style={determineScoreColor(score)} class="score">{score}</span>/{questionsData.results.length} correct questions</div>}                
-                {<div onClick={showAnswers} style={{left: checkAnswersClicked && '920px'}} className="check-answers-button">{checkAnswersClicked ? 'Play Again' : 'Check Answers'}</div>}
             </div>}
         </div>
     )

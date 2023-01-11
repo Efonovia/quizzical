@@ -1,0 +1,100 @@
+{
+	"items": [
+		{
+			"id": 17,
+			"icon": {
+				"width": 167,
+				"height": 295,
+				"src": "/static/media/blue microscope.6b8f70825d155854667b.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+			"title": "Science",
+			"description" : "Get ready to flex your science smarts with our challenging and informative quizzes! From biology and physics to chemistry and beyond, we've got questions to test your knowledge on a wide range of scientific subjects. Whether you're a science buff or just want to learn more, you're sure to find something here to pique your curiosity. So put on your lab coat and let's get quizzing!",
+			"isClicked": false
+		},
+		{
+			"id": 12,
+			"icon": {
+				"width": 275,
+				"height": 258,
+				"src": "/static/media/sound wave.f83987901387d0d92abb.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Music",
+			"description" : "Test your music knowledge and see if you have what it takes to tune in to the top of the charts! From pop to hip hop, rock to country, and everything in between, this quiz will have you humming along as you try to name that tune. So turn up the volume, put on your dancing shoes, and get ready to rock out with the ultimate music trivia challenge!",
+			"isClicked": false
+		},
+		{
+			"id": 21,
+			"icon": {
+				"width": 404,
+				"height": 303,
+				"src": "/static/media/Male football players greeting each other with handshake on the field.979c1c3d9fb447ff72ce.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/269948/pexels-photo-269948.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Sports",
+			"description" : "Are you a sports fanatic? Do you live and breathe all things athletic? If so, this quiz app is the perfect challenge for you! Test your knowledge of basketball, football, baseball, soccer, and more. See if you've got what it takes to be the ultimate sports champion! So why wait? Let's get moving and see if you've got game!",
+			"isClicked": false
+		},
+		{
+			"id": 19,
+			"icon": {
+				"width": 236,
+				"height": 233,
+				"src": "/static/media/maths decoration.907fdd6ace2998cbc6bc.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Math",
+			"description" : "Think you've got what it takes to solve the toughest math problems? Put your skills to the test with our fun and challenging quiz app! From basic arithmetic to advanced calculus, we've got everything covered. So grab your calculator and get ready to flex your math muscles. Can you conquer the numbers and come out on top? Try our app and find out!",
+			"isClicked": false
+		},
+		{
+			"id": 18,
+			"icon": {
+				"width": 233,
+				"height": 287,
+				"src": "/static/media/computer with keyboard and mouse.5eee87d9ea16f90040f3.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Computers",
+			"description" : "Think you're a tech wizard? Put your computer knowledge to the test with this fun quiz app! From hardware to software, coding to cybersecurity, this app has it all. Can you outsmart the computer and come out on top? Show off your tech savvy and rise to the top of the leaderboard!",
+			"isClicked": false
+		},
+		{
+			"id": 25,
+			"icon": {
+				"width": 359,
+				"height": 263,
+				"src": "/static/media/Girl draws an abstract picture.e0ef8816ddbdd83107ef.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Art",
+			"description" : "Are you a true art aficionado? Put your knowledge to the test with this fun and challenging quiz app! From classical paintings to modern sculptures, we've got it all covered. Can you identify a Monet from a Manet? A Rembrandt from a Renoir? Show off your art expertise and become a master of culture!",
+			"isClicked": false
+		},
+		{
+			"id": 15,
+			"icon": {
+				"width": 287,
+				"height": 255,
+				"src": "/static/media/game controller.6a94e24f6798cf0e87ae.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Video Games",
+			"description" : "Think you're a video game master? Put your skills to the test with our epic quiz app! From retro classics to the latest releases, we've got all your favorite games covered. Can you conquer the leaderboards and reign supreme as the ultimate gaming champion?",
+			"isClicked": false
+		},
+		{
+			"id": 27,
+			"icon": {
+				"width": 275,
+				"height": 230,
+				"src": "/static/media/side view of dog looking up.541ff42a7180811f3018.png"
+			},
+			"bannerImage": "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+			"title": "Animals",
+			"description" : "Think you know your animals? From the majestic lion to the tiny hamster, this quiz app will test your knowledge of the animal kingdom. So put on your safari hat and get ready to roar with trivia greatness! Can you become the top zoologist? Let's find out!",
+			"isClicked": false
+		}
+	]
+}

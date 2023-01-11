@@ -1,5 +1,6 @@
 import React from "react";
 import { nanoid } from "nanoid"
+import './new-questionpage.css'
 
 
 function Question(props) {
@@ -18,13 +19,17 @@ function Question(props) {
                 isClicked: false,
             }
         }))
-
         props.getAnswers(opt.optionText, props.id)
-
     }
 
     let optionElements = allOptions.map(option => {
-        return <div key={nanoid()} style={{background: option.isClicked ? '#5248da' : '#f5f6fa'}} onClick={() => handleOptionClicked(option)} className="option">{option.optionText}</div>
+        return <div key={nanoid()} 
+        style={{
+            background: option.isClicked ? 'black' : 'rgb(132, 133, 241)',
+            color: 'white',
+        }} 
+        onClick={() => handleOptionClicked(option)} 
+        className="option">{decodeURIComponent(option.optionText)}</div>
          
     })
 
@@ -33,11 +38,11 @@ function Question(props) {
     if(props.checkAnswersClicked) {
         allOptions.forEach(option => {
             if (props.answerSheet.correctAnswer === option.optionText) {
-                markedOptionElements.push(<div key={nanoid()} style={{background: '#62f362'}} className="option">{option.optionText}</div>)
+                markedOptionElements.push(<div key={nanoid()} style={{background: '#62f362'}} className="option">{decodeURIComponent(option.optionText)}</div>)
             } else if((option.optionText !== props.answerSheet.correctAnswer) && (option.optionText !== props.answerSheet.playerAnswer)){
-                markedOptionElements.push(<div key={nanoid()} style={{background: 'white'}} className="option">{option.optionText}</div>)
+                markedOptionElements.push(<div key={nanoid()} style={{background: 'gray'}} className="option">{decodeURIComponent(option.optionText)}</div>)
             } else if(props.answerSheet.correctAnswer !== props.answerSheet.playerAnswer){
-                markedOptionElements.push(<div key={nanoid()} style={{background: '#f85151'}} className="option">{option.optionText}</div>)
+                markedOptionElements.push(<div key={nanoid()} style={{background: '#f85151'}} className="option">{decodeURIComponent(option.optionText)}</div>)
             }
         })
     }
@@ -45,13 +50,13 @@ function Question(props) {
 
     return(
         <div>
-            <div className="question-area">
-                <div className="question-text">{props.questionData.question}</div>
-                    <div className="option-area">
+            <div className="question">
+                <h3>{parseInt(props.id[props.id.length-1])+1}.{decodeURIComponent(props.questionData.question)}</h3>
+                    <div className="option-container">
                         {props.checkAnswersClicked ? markedOptionElements : optionElements}
                     </div>
+                <hr></hr>
             </div>
-            <div className="divider"></div>
         </div>
     )
 }
