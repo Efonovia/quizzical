@@ -83,7 +83,7 @@ function App() {
 
     function determineScoreColor(num) {
         let percentage = (num/questionsData.results.length)*100
-        if(percentage <= 25) return {color: '#ff1b1b'}
+        if(percentage <= 25) return {color: '#381515'}
         if(percentage <= 50 && percentage > 25) return {color: '#ff8800'}
         if(percentage <= 75 && percentage > 50) return {color: '#d9ff00'}
         if(percentage > 75) return {color: '#00ff37'}
