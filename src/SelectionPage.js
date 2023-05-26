@@ -142,7 +142,7 @@ function SelectionPage(props) {
                     </select><br/>
 
                 </form>
-                    <button style={{top: "-245px"}} onClick={goToNextPage}>Confirm</button>
+                    <button style={{top: "-245px", right: "50px", backgroundColor: "blue"}} onClick={goToNextPage}>Confirm</button>
             </div>
         </div>
     )

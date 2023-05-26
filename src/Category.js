@@ -13,8 +13,9 @@ import './categorypage.css'
 function Category(props) {
     // let images = [Science, Music, Sports, math, Computers, Arts, VideoGames, Animals]
     const style = {
-        background: props.isClicked ? '#1d33ff' : 'black',
-        color: props.isClicked ? 'white' : 'black'
+        background: props.isClicked ? '#1d33ff' : 'white',
+        color: props.isClicked ? 'white' : 'black',
+        border: props.isClicked ? 'none' : '2px solid black'
     }
 
     function handleClick() {
